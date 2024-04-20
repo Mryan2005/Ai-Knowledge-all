@@ -1,4 +1,4 @@
-name: Build and Test
+ name: Build and Test
 on:
   pull_request:
   push:
@@ -17,7 +17,7 @@ jobs:
           gitbook fetch 3.2.3
           gitbook -V
       - run: |
-          sudo apt-get clean && apt-get update
+          sudo apt-get update
           sudo apt-get install -y calibre
       - run: gitbook build
         

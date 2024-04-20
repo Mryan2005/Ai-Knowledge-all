@@ -13,9 +13,10 @@ jobs:
         with:
           node-version: '10'
       - run: |
-          sudo npm install -g gitbook-cli
+          npm install -g gitbook-cli
           sudo gitbook fetch 3.2.3
           sudo gitbook -V
+      - run: |
           sudo apt-get clean && apt-get update
           sudo apt-get install -y calibre
           gitbook build

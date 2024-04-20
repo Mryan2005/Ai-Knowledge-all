@@ -15,7 +15,7 @@ jobs:
       - run: |
           npm install -g gitbook-cli
           gitbook fetch 3.2.3
-          sudo gitbook -V
+          gitbook -V
       - run: |
           sudo apt-get clean && apt-get update
           sudo apt-get install -y calibre

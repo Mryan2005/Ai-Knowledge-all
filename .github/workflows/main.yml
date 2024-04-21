@@ -11,15 +11,17 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '10'
-      - run: |
+      - name: Install dependencies
+        run: |
           npm install -g gitbook-cli
           gitbook fetch 3.2.3
           gitbook -V
-      - run: |
           sudo apt-get update 
           sudo apt-get install -y calibre
-      - run: |
-          gitbook build
-          gitbook epub
-          gitbook pdf
+      - name: Build
+        run: gitbook build
+      - name: Build EPUB
+        run: gitbook epub
+      - name: build pdf    
+        run: gitbook pdf
         

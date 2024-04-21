@@ -24,4 +24,13 @@ jobs:
         run: gitbook epub
       - name: build pdf    
         run: gitbook pdf
-        
+      - name: build mobi
+        run: gitbook mobi
+      - name: Upload pip Package to GitHub
+        uses: actions/upload-artifact@v4
+        with:
+          name: pip-package
+          path: |
+            book.epub
+            book.pdf
+            book.mobi
